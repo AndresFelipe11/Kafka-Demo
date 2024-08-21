@@ -1,7 +1,6 @@
 # Created by https://www.gitignore.io/api/java,linux,macos,sonar,gradle,windows,eclipse,sonarqube,sublimetext,intellij+all,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=java,linux,macos,sonar,gradle,windows,eclipse,sonarqube,sublimetext,intellij+all,visualstudiocode
 
-.kafka-env
 
 ### Eclipse ###
 .metadata
@@ -16,6 +15,7 @@ local.properties
 .loadpath
 .recommenders
 
+.kafka-env
 # External tool builders
 .externalToolBuilders/
 
