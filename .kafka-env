@@ -3,3 +3,25 @@ security.protocol=SASL_SSL
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='4IEFRL2F7ZV3TNBJ' password='TgU11ZabQUIhnJrGmvgNZ18dbB2cVvCc0zNg0Ll/l8cAlusPxb0pUY2sj1XYENTz';
 sasl.mechanism=PLAIN
 client.dns.lookup=use_all_dns_ips
+#{"data":{
+#    "node":{
+#    "name":"andres",
+#    "description":"A software dev"
+#            }
+#        },
+#    "id":"asasas",
+#    "source":"http://localhost:8080",
+#    "type":"",
+#    "subject":"",
+#    "time":"",
+#    "dataContentType":"",
+#    "spectVersion":"V1",
+#    "dataSchema":null,
+#    "extensionNames":[],
+#    "attributesNames":["datacontenttype",
+#    "specversion",
+#    "id",
+#    "source",
+#    "time",
+#    "type"]
+#}
