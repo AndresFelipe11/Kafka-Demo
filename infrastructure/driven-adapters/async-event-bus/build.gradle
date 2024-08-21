@@ -1,0 +1,10 @@
+dependencies {
+    implementation project(':model')
+//    implementation 'org.reactivecommons:async-commons-rabbit-starter:4.1.4'
+    implementation 'org.reactivecommons:async-kafka-starter:5.0.1-alpha'
+    implementation 'org.springframework:spring-context'
+    implementation 'io.cloudevents:cloudevents-core:2.4.2'
+    implementation 'io.cloudevents:cloudevents-http-basic:2.4.2'
+    implementation 'io.cloudevents:cloudevents-json-jackson:2.4.2'
+    implementation 'io.cloudevents:cloudevents-spring:2.4.2'
+}
