@@ -24,7 +24,7 @@ public class Config {
         kafkaProps.setMaxRetries(5);
         kafkaProps.setRetryDelay(1000);
         kafkaProps.setWithDLQRetry(true);
-        kafkaProps.setKafkaProps(RCKafkaConfig.readPropsFromDotEnv(Path.of(".kafka-env")));
+        kafkaProps.setKafkaProps(RCKafkaConfig.readPropsFromDotEnv(Path.of(".env")));
         return kafkaProps;
     }
 }
