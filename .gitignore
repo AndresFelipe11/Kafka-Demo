@@ -15,7 +15,7 @@ local.properties
 .loadpath
 .recommenders
 
-.kafka-env
+.env
 # External tool builders
 .externalToolBuilders/
 
