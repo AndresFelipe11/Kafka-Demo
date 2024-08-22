@@ -1,6 +1,7 @@
 package co.com.bancolombia.events.handlers;
 
 import co.com.bancolombia.model.operation.Operation;
+import co.com.bancolombia.usecase.operation.OperationUseCase;
 import io.cloudevents.CloudEvent;
 import lombok.AllArgsConstructor;
 import org.reactivecommons.api.domain.DomainEvent;
@@ -11,10 +12,11 @@ import reactor.core.publisher.Mono;
 @EnableEventListeners
 public class EventsHandler {
 //    private final SampleUseCase sampleUseCase;
+    private final OperationUseCase operationUseCase;
 
     public Mono<Void> handleEventA(DomainEvent<Operation> event) {
-        System.out.println("event received: " + event + " ->" + event.getData());
-//        return sampleUseCase.doSomething(event.getData());
+        System.out.println("event received: " + event + " ->" + event.getData().getAmount());
+        System.out.println(operationUseCase.saveSaldoNube(event.getData()));
         return Mono.empty();
     }
 }

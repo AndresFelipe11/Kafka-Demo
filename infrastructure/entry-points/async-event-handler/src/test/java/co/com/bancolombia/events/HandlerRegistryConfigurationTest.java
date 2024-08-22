@@ -7,17 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class HandlerRegistryConfigurationTest {
 
-    EventsHandler eventsHandler;
-    CommandsHandler commandsHandler;
-    QueriesHandler queriesHandler;
-
-    @BeforeEach
-    void setUp() {
-        eventsHandler = new EventsHandler();
-        commandsHandler = new CommandsHandler();
-        queriesHandler = new QueriesHandler();
-
-    }
 
 //    @Test
 //    void testHandlerRegistry() {

@@ -1,6 +1,7 @@
 apply plugin: 'org.springframework.boot'
 
 dependencies {
+	implementation project(':mongo-repository')
 	implementation project(':async-event-bus')
 	implementation project(':async-event-handler')
 	implementation project(':reactive-web')

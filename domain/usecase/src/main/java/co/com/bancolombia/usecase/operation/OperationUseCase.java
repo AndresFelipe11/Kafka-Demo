@@ -6,11 +6,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class OperationUseCase {
 
-//    private final AccountRepository cuentaRepository;
+    private final AccountRepository cuentaRepository;
 
 
-//    public String saveSaldoNube(Operation operation){
-//        return cuentaRepository.save(operation);
-//
-//    }
+    public String saveSaldoNube(Operation operation){
+        return cuentaRepository.save(operation);
+
+    }
 }
