@@ -7,9 +7,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-//@NoArgsConstructor
-@AllArgsConstructor
-@Builder(toBuilder = true)
 public class Operation {
-
+    private String accountSource;
+    private String accountDestination;
+    private double amount;
+    private String transactionType;
 }
