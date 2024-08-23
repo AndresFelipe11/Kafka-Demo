@@ -14,14 +14,14 @@ public class Handler {
 private  final ProductorUseCase productorUseCase;
 //private  final UseCase2 useCase2;
 
-//    public Mono<ServerResponse> listenGETEventUseCase(ServerRequest serverRequest) {
-//        return serverRequest.bodyToMono(Operation.class)
-//                .switchIfEmpty(Mono.error(() -> new RuntimeException("Invalid Request")))
-//                .flatMap(productorUseCase::sendEvent)
-//                .doOnNext(body -> System.out.println(" cuenta " + body))
-//                .then(ServerResponse.ok().bodyValue("{ \"estado\": \"Exito\" } { \"mensaje\": \"El evento se emitio con exito\" }"));
-//
-//    }
+    public Mono<ServerResponse> listenGETEventUseCase(ServerRequest serverRequest) {
+        return serverRequest.bodyToMono(Operation.class)
+                .switchIfEmpty(Mono.error(() -> new RuntimeException("Invalid Request")))
+                .flatMap(productorUseCase::sendEvent)
+                .doOnNext(body -> System.out.println(" cuenta " + body))
+                .then(ServerResponse.ok().bodyValue("{ \"estado\": \"Exito\" } { \"mensaje\": \"El evento se emitio con exito\" }"));
+
+    }
 
     public Mono<ServerResponse> listenGETCloudEventUseCase(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(Operation.class)
@@ -32,8 +32,4 @@ private  final ProductorUseCase productorUseCase;
 
     }
 
-    public Mono<ServerResponse> listenPOSTUseCase(ServerRequest serverRequest) {
-        // usecase.logic();
-        return ServerResponse.ok().bodyValue("");
-    }
 }

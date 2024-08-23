@@ -16,26 +16,21 @@ import reactor.core.publisher.Mono;
 import java.net.URI;
 import java.time.OffsetDateTime;
 import java.util.UUID;
+import java.util.logging.Level;
 
 @Log
 @RequiredArgsConstructor
 @EnableDomainEventBus
 public class ReactiveEventsGateway implements EventsGateway {
-    public static final String SOME_EVENT_NAME = "some.event.name";
     private final DomainEventBus domainEventBus;
     private final ObjectMapperSupplier supplier;
 
-//    @Override
-//    public Mono<Void> emit(Object event) {
-//        log.log(Level.INFO, "Sending domain event: {0}: {1}", new String[]{SOME_EVENT_NAME, event.toString()});
-//         return from(domainEventBus.emit(new DomainEvent<>(SOME_EVENT_NAME, UUID.randomUUID().toString(), event)));
-//    }
+    @Override
+    public Mono<Void> event(Operation event) {
+        log.log(Level.INFO, "Sending domain event: {0}: {1}", new String[]{"ttest", event.toString()});
+         return Mono.from(domainEventBus.emit(new DomainEvent<>("ttest", UUID.randomUUID().toString(), event)));
+    }
 
-//    @Override
-//    public Mono<DomainEvent<String>> event(Operation operation) {
-//        DomainEvent<String> event = new DomainEvent<>("topic_test", UUID.randomUUID().toString(), "");
-//        return Mono.from(domainEventBus.emit(event)).thenReturn(event);
-//    }
     @Override
     public Mono<Operation> cloudEvent(Operation operation) {
         CloudEvent event = CloudEventBuilder.v1()
@@ -45,7 +40,6 @@ public class ReactiveEventsGateway implements EventsGateway {
                 .withTime(OffsetDateTime.now())
                 .withData("application/json", JsonCloudEventData.wrap(supplier.get().valueToTree(operation)))
                 .build();
-//        return Mono.just(operation);
         return Mono.from(domainEventBus.emit(event)).thenReturn(operation);
     }
 

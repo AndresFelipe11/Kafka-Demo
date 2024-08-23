@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 public interface EventsGateway {
 //    Mono<Void> emit(Object event);
 
-//    Mono<DomainEvent<String>> event(Operation operation);
+    Mono<Void> event(Operation operation);
 
     public Mono<Operation> cloudEvent(Operation operation);
 }

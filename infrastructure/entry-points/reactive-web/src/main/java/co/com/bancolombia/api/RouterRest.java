@@ -14,7 +14,7 @@ public class RouterRest {
     @Bean
     public RouterFunction<ServerResponse> routerFunction(Handler handler) {
         return route(POST("/api/operation/cloudevent"), handler::listenGETCloudEventUseCase)
-                .andRoute(POST("/api/usecase/otherpath"), handler::listenGETCloudEventUseCase);
+                .andRoute(POST("/api/operation/event"), handler::listenGETEventUseCase);
 //                .and(route(GET("/api/operation/cloudevent"), handler::listenGETOtherUseCase));
     }
 }

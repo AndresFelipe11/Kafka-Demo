@@ -10,9 +10,9 @@ public class ProductorUseCase {
 
     private final EventsGateway eventsGateway;
 
-//    public Mono<DomainEvent<String>> sendEvent(Operation operation){
-//       return eventsGateway.event(operation);
-//    }
+    public Mono<Void> sendEvent(Operation operation){
+       return eventsGateway.event(operation);
+    }
 
     public Mono<Operation> sendCloudEvent(Operation operation){
         return eventsGateway.cloudEvent(operation);
