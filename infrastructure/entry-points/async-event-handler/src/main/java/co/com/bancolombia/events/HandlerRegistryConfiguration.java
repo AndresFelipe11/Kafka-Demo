@@ -16,7 +16,7 @@ public class HandlerRegistryConfiguration {
     @Bean
     public HandlerRegistry handlerRegistry(EventsHandler events) {
         return HandlerRegistry.register()
-                .listenEvent("topic_test", events::handleEventA, Operation.class);
+                .listenEvent("ttest", events::handleEventA, Operation.class);
 
     }
 

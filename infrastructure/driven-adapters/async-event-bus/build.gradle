@@ -1,0 +1,5 @@
+dependencies {
+    implementation project(':model')
+    implementation 'org.reactivecommons:async-kafka-starter:5.0.1-alpha'
+    implementation 'org.springframework:spring-context'
+}
